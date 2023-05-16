@@ -1,0 +1,27 @@
+﻿@model TestProjectMVC.Models.VievModel.DetailsVM
+
+<form method="post">
+
+        <div class="container col-7 mt-5 border border-black">
+            <img src="@WebConstants.ImagePath@Model.Product.Image" width="700" height="500" alt="...">
+            <h1>@Model.Product.Name</h1>
+            <h4>@((Model.Product.Price).ToString("zł"))</h4>
+            <p>@Model.Product.Category.Name</p>
+            <p>@Model.Product.Description</p>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-grid gap-3">
+                    <button type="button" class="btn btn-secondary btn-lg">Додати до кошика</button>
+                </div>
+                <div class="d-grid gap-3 mt-3">
+                    <button type="button" class="btn btn-primary btn-lg">Повернутися до списку</button>
+                </div>
+            </div>
+        </div>
+            
+            
+        </div>
+ 
+    
+</form>
+

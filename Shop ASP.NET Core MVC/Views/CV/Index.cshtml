@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <linkhref ="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" />
+
+    <title>My Resume</title>
+
+    <link rel="stylesheet" href=".\css\styleCV.css" />
+</head>
+<body class="body">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Main content -->
+        <div class="main-content">
+            <!-- About me -->
+            <div class="about-me-container">
+                <h2 class="my-profesion">Front-End Developer</h2>
+                <h1 class="my-name">Stanislav Khaverko</h1>
+                <p class="my-descr">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                    ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
+                    accumsan lacus vel facilisis.
+                </p>
+            </div>
+            <!--My Projects -->
+            <div class="projects-container">
+                <h3 class="n">Projects</h3>
+                <ol class="project-list">
+                    <li class="project-item">
+                        <a href="https://github.com/Djackvorobey/Parking"
+                           class="project-item-link">https://github.com/Djackvorobey/Parking</a>
+                        <span class="project-item-desc">........................[ C#, ASP.NET Core, SQL ]</span>
+                    </li>
+                    <li class="project-item">
+                        <a href="https://cryptohub.p.goit.global/"
+                           class="project-item-link">https://cryptohub.p.goit.global/</a> <span class="project-item-desc">.........................................[ JavaScript ]</span>
+                    </li>
+                    <li class="project-item">
+                        <a href="https://kidslike.p.goit.global/"
+                           class="project-item-link">https://kidslike.p.goit.global/</a> <span class="project-item-desc">
+                            ..............................................[ React.js,
+                            Node.js ]
+                        </span>
+                    </li>
+                </ol>
+            </div>
+            <!-- Work experience block -->
+            <div class="work-expirience-container">
+                <h3 class="main-content-title">Work Experience</h3>
+                <!-- Company 1 -->
+                <div class="company-containers">
+                    <h4 class="work-exp-pos">Warehouseman/Seller <span class="color-blue">Rolsan</span></h4>
+                    <p class="work-period">December 2020 - May 2021 | Poland</p>
+                    <ul class="work-duties-list">
+                        <li class="work-duties">Selling and storing automotive parts in the store.</li>
+                        <li class="work-duties">Running sales programs.</li>
+                        <li class="work-duties">Website operations.</li>
+                    </ul>
+                </div>
+                <!-- Company 2 -->
+                <div class="company-containers">
+                    <h4 class="work-exp-pos">
+                        Road worker <span class="color-blue">PHUB Piotr Pawlica</span>
+                    </h4>
+                    <p class="work-period">August 2021 - December 2022 | Poland</p>
+                    <ul class="work-duties-list">
+                        <li class="work-duties">Roadside construction.</li>
+                        <li class="work-duties">Road workers' supplies.</li>
+                    </ul>
+                </div>
+                <!-- Company 3 -->
+                <div class="company-containers">
+                    <h4 class="work-exp-pos">Warehouseman <span class="color-blue">Sanergia</span></h4>
+                    <p class="work-period">February 2022 - up to now | Poland</p>
+                    <ul class="work-duties-list">
+                        <li class="work-duties">Selling and storing thermal insulation materials.</li>
+                        <li class="work-duties">Running sales programs.</li>
+                        <li class="work-duties">Website operations.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Education -->
+            <div class="education-container">
+                <h3 class="main-content-title">Education</h3>
+                <h4 class="institute">
+                    Politechnika Rzeszowska im. Ignacego Łukasiewicza
+                </h4>
+                <h4 class="direction">Management and production engineering</h4>
+                <p class="work-period">October 2019 - for now. | Poland</p>
+            </div>
+        </div>
+        <!-- SideBar -->
+        <aside class="side-bar">
+            <img src="./images/photo-1.jpg"
+                 alt="My photo"
+                 width="370px"
+                 class="my-photo" />
+            <!-- Contacts -->
+            <div class="contacts">
+                <h3 class="sidebar-title">Contacts</h3>
+                <p class="contact-item"><span class="contact-style">C:</span> <a href="tel:+48531933178" class="contact-tel">+48531933178</a></p>
+                <p class="contact-item">
+                    <span class="contact-style">E:</span>
+                    <a href="mailto:stas.xaverko@gmail.com" class="contact-email">stas.xaverko@gmail.com</a>
+                </p>
+            </div>
+            <!-- Tech skills -->
+            <div class="tech-skills">
+                <h3 class="sidebar-title">Tech Skills</h3>
+                <ul class="skills">
+                    <li class="skills-item"> <span class="skills-text">C#</span> </li>
+                    <li class="skills-item"><span class="skills-text">SQL</span> </li>
+                    <li class="skills-item"> <span class="skills-text">ASP.Net Core</span> </li>
+                    <li class="skills-item"> <span class="skills-text">Windows Forms</span> </li>
+                    <li class="skills-item"> <span class="skills-text">Photoshop</span> </li>
+                    <li class="skills-item"> <span class="skills-text">Adobe Premier Pro</span> </li>
+                </ul>
+            </div>
+            <!-- Soft skills -->
+            <div class="soft-skills">
+                <h3 class="sidebar-title"> Soft skills</h3>
+                <ul class="skills">
+                    <li class="skills-item"> <span class="skills-text">Punctual</span> </li>
+                    <li class="skills-item"> <span class="skills-text">Agile</span> </li>
+                    <li class="skills-item"> <span class="skills-text">GTD</span> </li>
+                    <li class="skills-item"> <span class="skills-text">Teamwork</span> </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
+
+

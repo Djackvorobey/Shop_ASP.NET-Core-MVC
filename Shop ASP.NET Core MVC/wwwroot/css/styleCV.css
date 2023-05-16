@@ -1,0 +1,254 @@
+
+body {
+    background-color: white;
+    padding: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 1200px;
+    height: 1319px;
+}
+
+
+.work-period {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A8A8A8;
+    margin-top: 11px;
+    margin-bottom: 8px;
+}
+
+.color-blue {
+    color: #6D9BF5;
+}
+
+.work-duties {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959;
+}
+
+.work-duties-list {
+    padding-left: 14px;
+    margin-top: 8px;
+}
+
+.main-content {
+    padding: 80px;
+    width: 100%;
+}
+
+.my-name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 55px;
+    margin: 0 0 20px 0;
+    color: #000000;
+}
+
+.main-conteтt-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    margin: 0 0 8px 0;
+    color: #000000;
+}
+
+.my-descr {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    width: 525px;
+    margin: 0 0 0 0;
+    color: #595959;
+}
+
+/* About me  */
+
+.my-profesion {
+    margin-bottom: 100px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0 0 18px 0;
+    color: #000000;
+}
+
+.work-exp-pos {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    color: #000000;
+}
+
+.company-containers {
+    margin-bottom: 16px;
+}
+
+.project-item {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.project-list {
+    padding: 0 0 0 14px;
+    margin: 0;
+}
+
+.projects-container {
+    margin-bottom: 48px;
+}
+
+.project-item-desc {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959;
+}
+
+.project-item-link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #005FFF;
+}
+
+.about-me-container {
+    margin-bottom: 64px;
+}
+/* work-expirience */
+.work-expirience-container {
+    margin: 0 0 0 16px;
+}
+/* Education */
+.education-container {
+    margin-top: 43px;
+}
+
+.institute {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #6D9BF5;
+    margin-top: 12px;
+}
+
+.direction {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 12px;
+    color: #000000;
+}
+/* Side Bar */
+.side-bar {
+    width: 370px;
+    background: #E0EBFE;
+    margin: 0;
+}
+
+.my-photo {
+    margin-top: 40px;
+}
+
+.contacts {
+    margin-left: 40px;
+    margin-top: 48px;
+}
+
+.tech-skills {
+    padding-left: 40px;
+    margin-top: 48px;
+}
+
+.soft-skills {
+    padding-left: 40px;
+    margin-top: 48px;
+}
+
+.sidebar-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #161D2A;
+}
+
+.contact-style {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #161D2A;
+}
+
+.contact-item {
+    margin: 0;
+}
+
+.contact-tel {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 171% */
+
+
+    color: #161D2A;
+}
+
+.contact-email {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 171% */
+
+    text-decoration-line: underline;
+    color: #2979FF;
+}
+
+.skills {
+    margin: 0;
+    padding: 0 0 0 22px;
+}
+
+.skills-item {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 171% */
+
+
+    color: #6D9BF5;
+}
+
+.skills-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #161D2A;
+}

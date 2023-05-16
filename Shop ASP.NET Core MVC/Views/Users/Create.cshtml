@@ -1,0 +1,40 @@
+﻿@model TestProjectMVC.Models.Users
+
+<form method="post" asp-action="Create">
+    <div >
+        <div >
+            <h2 >Add Category</h2>
+        </div>
+        <div >
+            <div >
+                @*Name*@
+                <div >
+                    <div>
+                        <label asp-for="Name"></label>
+                    </div>
+                    <div >
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+                </div>
+                
+                <div >
+                    <div >
+                        <div >
+                            <input type="submit" class="" value="Create" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="index" class="">Back</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-4">
+                @*Empty*@
+            </div>
+        </div>
+
+    </div>
+</form>
+
