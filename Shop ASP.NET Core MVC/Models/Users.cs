@@ -1,13 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace TestProjectMVC.Models
 {
-    public class Users
+    public class Users: IdentityUser
     {
-        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public DateTime time { get; set; } 
+        public DateTime time { get; set; }
     }
 }

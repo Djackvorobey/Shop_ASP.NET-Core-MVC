@@ -1,20 +1,29 @@
 ﻿@model TestProjectMVC.Models.VievModel.DetailsVM
 
 <form method="post">
-
-        <div class="container col-7 mt-5 border border-black">
+    <input asp-for="@Model.Product.Id" hidden />
+        <div class="container col-8 mt-5 border border-black">
             <img src="@WebConstants.ImagePath@Model.Product.Image" width="700" height="500" alt="...">
             <h1>@Model.Product.Name</h1>
-            <h4>@((Model.Product.Price).ToString("zł"))</h4>
+            <h4>@Model.Product.Price zł</h4>
             <p>@Model.Product.Category.Name</p>
             <p>@Model.Product.Description</p>
-        <div class="row">
-            <div class="col-12">
-                <div class="d-grid gap-3">
-                    <button type="button" class="btn btn-secondary btn-lg">Додати до кошика</button>
+        <div class="container rounded">
+            <div class="row">
+                <div class=" col-6 d-grid gap-3 mb-3">
+                    @if (Model.ExistsInCart)
+                    {
+                        <a asp-action="RemoveFromCart" asp-route-id="@Model.Product.Id" type="button" class="btn btn-warning btn-lg">Remove from Cart</a>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-secondary btn-lg">Add to Cart</button> 
+                    }
+                    
+                    
                 </div>
-                <div class="d-grid gap-3 mt-3">
-                    <button type="button" class="btn btn-primary btn-lg">Повернутися до списку</button>
+                <div class=" col-6 d-grid gap-3  mb-3">
+                    <a asp-action="Index" type="button" class="btn btn-primary btn-lg">Back to List</a>
                 </div>
             </div>
         </div>

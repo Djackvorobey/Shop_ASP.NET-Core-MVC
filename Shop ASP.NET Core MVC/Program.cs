@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using System.Configuration;
 using System.Reflection.Metadata.Ecma335;
 using TestProjectMVC.Data;
+using TestProjectMVC.Models;
 
 namespace TestProjectMVC
 {
@@ -18,15 +20,27 @@ namespace TestProjectMVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
-            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); //ППідключаєм датабейс
+            builder.Services.AddHttpContextAccessor();
+            builder.Services.AddSession(Options =>
+            {
+                Options.IdleTimeout = TimeSpan.FromMinutes(10);
+                Options.Cookie.HttpOnly= true;
+                Options.Cookie.IsEssential= true;
+            });
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); //
+          builder.Services.AddDefaultIdentity<Users>().AddEntityFrameworkStores<ApplicationDbContext>();
+           
+           //builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+              //  .AddEntityFrameworkStores<ApplicationDbContext>();
             
+           // builder.Services.AddControllersWithViews();
+
             //add google authentication
             //builder.Services.AddAuthentication(options =>
             //{
             //    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             //    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
-                
+
             //})
             //    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme)
             //    .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
@@ -52,13 +66,16 @@ namespace TestProjectMVC
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
 
+            app.MapRazorPages();
             app.MapControllerRoute(
+                
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
            
 

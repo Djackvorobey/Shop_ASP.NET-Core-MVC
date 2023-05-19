@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccesor
+@using Shop_MVC.Utility
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -20,7 +23,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -36,13 +41,31 @@
                                     
                                 </ul>
                             </li>
+                            <li class="nav-item" >
+                                @if (HttpContextAccesor.HttpContext.Session.Get<List<Shop_MVC.Models.ShoppingCart>>(WebConstants.SessionCart) != null)
+                                {
+                                    <a asp-action="Index" asp-controller="Cart" class="nav nav-link" style="color:black">
+                                        @{
+                                            var count = HttpContextAccesor.HttpContext.Session.Get<List<Shop_MVC.Models.ShoppingCart>>(WebConstants.SessionCart).Count;
+                                        }
+                                    <i class="fa-solid fa-cart-shopping fa-beat-fade" style="color: black;"></i> &nbsp; (@count)
+                                    </a>
+                                }
+                                else
+                                {
+                                <a href="#" class="nav-link" style="color: black;">
+                                    <i class="fa-solid fa-cart-shopping"></i> &nbsp; (0)
+                                    </a>
+                                }
+                           </li>
                         
                       
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    
+                        <partial name="_LoginPartial" />
+                    
+                    
+                   
                 </div>
             </div>
         </nav>
