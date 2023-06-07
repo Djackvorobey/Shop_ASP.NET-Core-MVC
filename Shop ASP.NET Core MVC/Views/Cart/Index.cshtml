@@ -1,0 +1,83 @@
+﻿@model IEnumerable<TestProjectMVC.Models.VievModel.ProductVM>
+@Html.AntiForgeryToken()
+
+
+
+@if (Model.Count() > 0)
+{
+
+    <form asp-controller="Cart" asp-action="Index" method="post">
+        
+        <div class="container">
+            <h1 class="mt-5">Shopping cart</h1>
+            <table class="table mt-4">
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Product name</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>The total cost</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        @foreach (var item in Model)
+                        {
+                           
+                            <tr>
+                                <td><img src="@WebConstants.ImagePath@item.Product.Image" alt="Товар 1" style="width: 50px;"></td>
+                                <td>@item.Product.Name</td>
+                                <td><span id="priceValue">@item.Product.Price</span></td>
+                                <td><input id="amountValue" class="form-control" type="number" placeholder="@item.Amount" value="@item.Amount"></td>
+                                <td><p> <span id="totalPriceValue">0</span></p></td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <a asp-controller="Cart" asp-action="Remove" asp-route-Id ="@item.Product.Id" class="btn btn-danger mx-2"><i class="fa-solid fa-trash"></i>&nbsp;</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        
+                    }
+                   
+                    <tr>
+                        <td colspan="4" class="text-right">Total cost:</td>
+                        <td>[totalCost]</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">To Order </button>
+        </div>
+   </form>
+}
+else
+{
+    <p >Please add item</p>
+}
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    <script>
+        function updateTotalPrice() {
+            // Отримати поточні значення Price та Amount
+            var currentPrice = parseInt(document.getElementById('priceValue').textContent);
+            var currentAmount = parseInt(document.getElementById('amountValue').value);
+
+            // Обчислити нове значення TotalPrice
+            var totalPrice = currentPrice * currentAmount;
+
+            // Оновити значення TotalPrice на сторінці
+            document.getElementById('totalPriceValue').textContent = totalPrice;
+        }
+
+        // Слідкувати за змінами значення Amount
+        document.getElementById('amountValue').addEventListener('input', updateTotalPrice);
+
+    </script>
+}
+

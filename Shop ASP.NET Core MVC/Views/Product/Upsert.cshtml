@@ -4,7 +4,7 @@
     var title = "Create Product";
 }
 
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" class="mb-5">
     <div class="border p-3">
         @if (Model.Product.Id!=0)
         {
@@ -43,7 +43,7 @@
                         <label asp-for="Product.Description"></label>
                         </div>
                         <div class="col-8">
-                          <textarea asp-for="Product.Description" class="form-control "></textarea>
+                          <textarea asp-for="Product.Description" class="form-control summernote "></textarea>
                         <span asp-validation-for="Product.Description" class="text-danger"></span>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
     }
     <script>
         $(document).ready(function () {
-            $('#summernote').summernote();
+            $('.summernote').summernote();
         });
         function validateInput(){
             if (document.getElementById("uploadBox").value==""){

@@ -1,12 +1,11 @@
 ﻿@model TestProjectMVC.Models.Product
 
-<div class="card w-50 mb-4 filter @Model.Category.Name.Replace(' ','_')">
+<div class="card col-4 m-2 filter @Model.Category.Name.Replace(' ','_')">
   <div class="card-body">
         <img src="@WebConstants.ImagePath@Model.Image" class="card-img-top" width="225" height="350" alt="...">
     <p class="">@Model.Category.Name </p>
     <h5 class="card-title">@Model.Name</h5>
     <p>Price: @Model.Price zł</p>
-    <p class="card-text">@Model.Description</p>
     <p></p>
     <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary">Viev Details</a>
   </div>

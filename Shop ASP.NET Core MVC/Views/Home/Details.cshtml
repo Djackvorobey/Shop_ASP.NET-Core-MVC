@@ -1,36 +1,64 @@
 ﻿@model TestProjectMVC.Models.VievModel.DetailsVM
 
-<form method="post">
-    <input asp-for="@Model.Product.Id" hidden />
-        <div class="container col-8 mt-5 border border-black">
-            <img src="@WebConstants.ImagePath@Model.Product.Image" width="700" height="500" alt="...">
-            <h1>@Model.Product.Name</h1>
-            <h4>@Model.Product.Price zł</h4>
-            <p>@Model.Product.Category.Name</p>
-            <p>@Model.Product.Description</p>
-        <div class="container rounded">
-            <div class="row">
-                <div class=" col-6 d-grid gap-3 mb-3">
-                    @if (Model.ExistsInCart)
-                    {
-                        <a asp-action="RemoveFromCart" asp-route-id="@Model.Product.Id" type="button" class="btn btn-warning btn-lg">Remove from Cart</a>
-                    }
-                    else
-                    {
-                        <button type="submit" class="btn btn-secondary btn-lg">Add to Cart</button> 
-                    }
-                    
-                    
-                </div>
-                <div class=" col-6 d-grid gap-3  mb-3">
-                    <a asp-action="Index" type="button" class="btn btn-primary btn-lg">Back to List</a>
-                </div>
-            </div>
-        </div>
-            
-            
-        </div>
- 
+<form method="post" class="border border-black mb-5">
+    <div class="m-5">
+        <input asp-for="@Model.Product.Id" hidden />
     
-</form>
+        <div class="container">
 
+            <div class="row ">
+                <div class="col-md-6">
+                     <img src="@WebConstants.ImagePath@Model.Product.Image" width="500" height="500" alt="...">
+                </div>
+
+                <div class="col-md-6 mb-5 position-relative">
+                    <div class="position-absolute bottom-0">
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <div class="d-grid gap-1">
+                                    @if (Model.ExistsInCart)
+                                    {
+                                        <a asp-action="RemoveFromCart" asp-route-id="@Model.Product.Id" type="button" class="btn btn-warning btn-lg">Remove from Cart</a>
+                                    }
+                                    else
+                                    {
+                                        <h3>Product Amount</h3>
+                                        <input asp-for="@Model.ProductAmount" class="form-control mb-5" placeholder="Enter value" />
+                                        <span asp-validation-for="@Model.ProductAmount" class="text-danger"></span>
+                                        <button type="submit" class="btn btn-secondary btn-lg">Add to Cart</button>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-grid gap-1">
+                                    <a asp-action="Index" type="button" class="btn btn-primary btn-lg">Back to List</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+           
+
+        </div>
+        
+
+            <h1>@Model.Product.Name</h1>
+
+            <h4>@Model.Product.Price zł</h4>
+
+        <p><h3>Category: @Model.Product.Category.Name</h3></p>
+
+        <div>
+            @Html.Raw(Model.Product.Description)
+        </div>
+      
+    </div>
+
+</form>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

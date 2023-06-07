@@ -1,4 +1,6 @@
-﻿namespace TestProjectMVC.Models.VievModel
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TestProjectMVC.Models.VievModel
 {
     public class DetailsVM
     {
@@ -8,5 +10,9 @@
         }
         public Product Product { get; set; }
         public bool ExistsInCart { get; set; }
+
+        [Range(1, int.MaxValue)]
+        [Display(Name = "Product Amount")]
+        public int ProductAmount { get; set; }
     }
 }

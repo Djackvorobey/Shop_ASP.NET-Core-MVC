@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using TestProjectMVC.Models;
 
-namespace Shop_MVC.Areas.Identity.Pages.Account.Manage
+namespace TestProjectMVC.Areas.Identity.Pages.Account.Manage
 {
     public class DeletePersonalDataModel : PageModel
     {

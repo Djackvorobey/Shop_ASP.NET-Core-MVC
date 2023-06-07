@@ -1,0 +1,71 @@
+﻿@model TestProjectMVC.Models.VievModel.ProductUserVM
+
+<div class="container">
+    <h1>Order Summary</h1>
+
+   
+   
+        <h2>Shipping Addres</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="profile-form" method="post">
+                    
+                    <div class="form-floating mb-3">
+                        <input asp-for="ApplicationUser.Name" class="form-control" placeholder="Please enter your Name." />
+                        <label asp-for="ApplicationUser.Name" class="form-label"></label>
+                        <span asp-validation-for="ApplicationUser.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="ApplicationUser.Surname" class="form-control" placeholder="Please enter your Surname." />
+                        <label asp-for="ApplicationUser.Surname" class="form-label"></label>
+                        <span asp-validation-for="ApplicationUser.Surname" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="ApplicationUser.Region" class="form-control" placeholder="Please enter your Region." />
+                        <label asp-for="ApplicationUser.Region" class="form-label"></label>
+                        <span asp-validation-for="ApplicationUser.Region" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="ApplicationUser.City" class="form-control" placeholder="Please enter your City." />
+                        <label asp-for="ApplicationUser.City" class="form-label"></label>
+                        <span asp-validation-for="ApplicationUser.City" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="ApplicationUser.Address" class="form-control" placeholder="Please enter your Address." />
+                        <label asp-for="ApplicationUser.Address" class="form-label"></label>
+                        <span asp-validation-for="ApplicationUser.Address" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="ApplicationUser.PostalCode" class="form-control" placeholder="Please enter your PostalCode." />
+                        <label asp-for="ApplicationUser.PostalCode" class="form-label"></label>
+                        <span asp-validation-for="ApplicationUser.PostalCode" class="text-danger"></span>
+                    </div>
+                   
+
+                    <h2>Products list:</h2>
+
+                    <ul class="list-group">
+                        @foreach (var item in Model.ProductList)
+                    {
+                        <li class="list-group-item">@item.Product.Name - @item.Amount szt - {total cost} zł</li>
+                    }
+                        
+                        
+                    </ul>
+
+                    <div class="mt-3">
+                        <p><strong>{Total Cost}</strong></p>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Order</button>
+                </form>
+            </div>
+        </div>
+
+    
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

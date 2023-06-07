@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using TestProjectMVC.Models;
 
-namespace Shop_MVC.Areas.Identity.Pages.Account
+namespace TestProjectMVC.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class ResendEmailConfirmationModel : PageModel

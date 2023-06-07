@@ -1,7 +1,8 @@
 ﻿@model TestProjectMVC.Models.VievModel.HomeVM
 
 
-<div class="container">
+
+<div class="container mb-5">
      <div class="text-center mt-2">
            <button class="btn btn-dark filter-button" data-filter="all">All</button>
            @foreach (var obj in Model.Categories)
@@ -10,14 +11,20 @@
         }
      </div>
      <br />
-     <div>
-         @foreach (var prod in Model.Products)
-        {
-            <partial name="_IndividualProductCard" model="prod"/>
-            //Show all products
-        }
-     </div>
+    @if (Model.Products.Count() > 0)
+    {
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                @foreach (var prod in Model.Products)
+                {
+                    <partial name="_IndividualProductCard" model="prod" />
+                    // Показати всі продукти
+                }
+            </div>
+        </div>
+    }
 </div>
+
 
 @section Scripts{
     <script>

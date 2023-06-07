@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using TestProjectMVC.Models;
 
-namespace Shop_MVC.Areas.Identity.Pages.Account
+namespace TestProjectMVC.Areas.Identity.Pages.Account
 {
     public class LoginWith2faModel : PageModel
     {

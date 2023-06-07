@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor HttpContextAccesor
-@using Shop_MVC.Utility
+@using TestProjectMVC.Utility
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,22 +38,24 @@
                                 <li><a class="nav-link text-dark" asp-controller="Category" asp-action="Index">Category</a></li>
                                 <li><a class="nav-link text-dark" asp-controller="Product" asp-action="Index">Products</a></li>
                                 <li><a class="nav-link text-dark" asp-controller="ApplicationType" asp-action="Index">ApplicationType</a></li>
-                                    
+                                 <div class="dropdown-divider"></div> 
+                                 <li><a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Create Admin User</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item" >
-                                @if (HttpContextAccesor.HttpContext.Session.Get<List<Shop_MVC.Models.ShoppingCart>>(WebConstants.SessionCart) != null)
+                                @if (HttpContextAccesor.HttpContext.Session.Get<List<TestProjectMVC.Models.ShoppingCart>>(WebConstants.SessionCart) != null)
                                 {
                                     <a asp-action="Index" asp-controller="Cart" class="nav nav-link" style="color:black">
                                         @{
-                                            var count = HttpContextAccesor.HttpContext.Session.Get<List<Shop_MVC.Models.ShoppingCart>>(WebConstants.SessionCart).Count;
+                                            var count = HttpContextAccesor.HttpContext.Session.Get<List<TestProjectMVC.Models.ShoppingCart>>(WebConstants.SessionCart).Count;
                                         }
+                                        
                                     <i class="fa-solid fa-cart-shopping fa-beat-fade" style="color: black;"></i> &nbsp; (@count)
                                     </a>
                                 }
-                                else
+                               else 
                                 {
-                                <a href="#" class="nav-link" style="color: black;">
+                                    <a href="#" class="nav-link" style="color: blue;">
                                     <i class="fa-solid fa-cart-shopping"></i> &nbsp; (0)
                                     </a>
                                 }

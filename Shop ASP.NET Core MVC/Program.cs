@@ -27,11 +27,13 @@ namespace TestProjectMVC
                 Options.Cookie.HttpOnly= true;
                 Options.Cookie.IsEssential= true;
             });
-            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); //
-          builder.Services.AddDefaultIdentity<Users>().AddEntityFrameworkStores<ApplicationDbContext>();
+            
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")).EnableSensitiveDataLogging()); //
+         // builder.Services.AddDefaultIdentity<Users>().AddEntityFrameworkStores<ApplicationDbContext>();
            
-           //builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-              //  .AddEntityFrameworkStores<ApplicationDbContext>();
+           builder.Services.AddIdentity<Users, IdentityRole>()
+               .AddDefaultTokenProviders().AddDefaultUI()
+              .AddEntityFrameworkStores<ApplicationDbContext>();
             
            // builder.Services.AddControllersWithViews();
 

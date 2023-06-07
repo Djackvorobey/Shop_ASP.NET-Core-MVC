@@ -6,5 +6,7 @@ namespace TestProjectMVC.Models.VievModel
     {
         public Product Product { get; set; }
         public IEnumerable<SelectListItem> CategorySelectedList { get; set; }
+
+        public int Amount { get; set; }
     }
 }

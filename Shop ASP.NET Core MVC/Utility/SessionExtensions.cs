@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Text.Json;
 
-namespace Shop_MVC.Utility
+namespace TestProjectMVC.Utility
 {
     public static class SessionExtensions
     {

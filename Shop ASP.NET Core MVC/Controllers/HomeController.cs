@@ -1,11 +1,10 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Shop_MVC.Models;
-using Shop_MVC.Utility;
+using TestProjectMVC.Models;
+using TestProjectMVC.Utility;
 using System.Diagnostics;
 using TestProjectMVC.Data;
-using TestProjectMVC.Models;
 using TestProjectMVC.Models.VievModel;
 
 namespace TestProjectMVC.Controllers
@@ -34,6 +33,7 @@ namespace TestProjectMVC.Controllers
 
         public IActionResult Details(int Id)
         {
+           
             // Код для извлечения сесии
             List<ShoppingCart> shoppingCartList = new();
             if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WebConstants.SessionCart) != null
@@ -62,8 +62,9 @@ namespace TestProjectMVC.Controllers
 
 
         [HttpPost,ActionName("Details")]
-        public IActionResult DetailsPost(int Id)
+        public IActionResult DetailsPost(DetailsVM detailsVM)
         {
+
             // Код для извлечения сесии
             List<ShoppingCart> shoppingCartList = new();
             if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WebConstants.SessionCart)!= null 
@@ -73,7 +74,7 @@ namespace TestProjectMVC.Controllers
             }
             //Код для извлечения сесии
 
-            shoppingCartList.Add(new ShoppingCart() { ProductId= Id });
+            shoppingCartList.Add(new ShoppingCart() { ProductId= detailsVM.Product.Id, ProductAmount = detailsVM.ProductAmount});
             HttpContext.Session.Set(WebConstants.SessionCart, shoppingCartList);
             return RedirectToAction(nameof(Index));
         }

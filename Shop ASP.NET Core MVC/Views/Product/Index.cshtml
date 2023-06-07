@@ -43,7 +43,7 @@
                         <td class="text-center">
                             <div class="btn-group">
                                 <a  asp-route-Id="@obj.Id" asp-action="Upsert" class="btn btn-primary mx-2"><i class="fa-solid fa-pen-to-square"></i>&nbsp;</a>
-                                <a  asp-route-Id="@obj.Id" asp-action="Delete" onclick="validateDelete()" class="btn btn-danger mx-2"><i class="fa-solid fa-delete-left"></i>&nbsp;</a>
+                                <a  asp-route-Id="@obj.Id" asp-action="Delete" class="btn btn-danger mx-2"><i class="fa-solid fa-delete-left"></i>&nbsp;</a>
                             </div>
                         </td>
                     </tr>
@@ -58,34 +58,7 @@
 
 </div>
 
-<script>
-    function validateDelete(){
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
 
-                )
-                console.log("true");
-                
-                
-            }
-            
-        })
-        console.log("false");
-        
-    }
-</script>
 
 
 

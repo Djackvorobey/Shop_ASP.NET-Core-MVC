@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TestProjectMVC.Models;
 
-namespace Shop_MVC.Areas.Identity.Pages.Account.Manage
+namespace TestProjectMVC.Areas.Identity.Pages.Account.Manage
 {
     public class ExternalLoginsModel : PageModel
     {

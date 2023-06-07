@@ -10,20 +10,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using TestProjectMVC.Models;
+using TestProjectMVC.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace Shop_MVC.Areas.Identity.Pages.Account.Manage
+namespace TestProjectMVC.Areas.Identity.Pages.Account.Manage
 {
     public class ChangePasswordModel : PageModel
     {
         private readonly UserManager<Users> _userManager;
         private readonly SignInManager<Users> _signInManager;
         private readonly ILogger<ChangePasswordModel> _logger;
-
+        private readonly ApplicationDbContext _dbContext;
         public ChangePasswordModel(
             UserManager<Users> userManager,
             SignInManager<Users> signInManager,
-            ILogger<ChangePasswordModel> logger)
+            ILogger<ChangePasswordModel> logger,
+            ApplicationDbContext dbContext)
         {
+            _dbContext = dbContext;
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
@@ -101,6 +105,8 @@ namespace Shop_MVC.Areas.Identity.Pages.Account.Manage
             {
                 return Page();
             }
+
+          var userList =  _dbContext.Users.ToList();
 
             var user = await _userManager.GetUserAsync(User);
             if (user == null)

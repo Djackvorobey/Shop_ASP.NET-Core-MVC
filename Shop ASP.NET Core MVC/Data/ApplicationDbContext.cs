@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TestProjectMVC.Models;
-using Shop_MVC.Models;
 
 namespace TestProjectMVC.Data
 {
@@ -17,6 +16,13 @@ namespace TestProjectMVC.Data
 
         public DbSet<ApplicationType> ApplicationType { get; set; }
 
-
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<Users>(b =>
+            {
+                b.Property(u => u.PhoneNumber).HasMaxLength(15);
+            });
+        }
     }
 }
